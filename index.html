@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woodworth AI - AI Consulting for SMBs</title>
+    <!-- Favicon placeholder (replace with your actual favicon.ico) -->
+    <link rel="icon" type="image/x-icon" href="https://placehold.co/16x16/indigo/white?text=AI">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            /* Light blue-gray background */
+            color: #334155;
+            /* Darker text for readability */
+        }
+
+        /* Hide all sections by default, show only the active one via JS */
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* Custom scroll-to-top button styling */
+        #scrollToTopBtn {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            /* Fixed position */
+            bottom: 20px;
+            /* Place at the bottom */
+            right: 30px;
+            /* Place at the right */
+            z-index: 99;
+            /* Ensure it's above other content */
+            border: none;
+            /* Remove borders */
+            outline: none;
+            /* Remove outline */
+            background-color: #4f46e5;
+            /* Indigo background */
+            color: white;
+            /* White text */
+            cursor: pointer;
+            /* Add a mouse pointer on hover */
+            padding: 15px;
+            /* Some padding */
+            border-radius: 50%;
+            /* Rounded corners */
+            font-size: 18px;
+            /* Increase font size */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            /* Add subtle shadow */
+            transition: background-color 0.3s, transform 0.3s;
+            /* Smooth transitions */
+        }
+
+        #scrollToTopBtn:hover {
+            background-color: #4338ca;
+            /* Darker indigo on hover */
+            transform: translateY(-2px);
+            /* Slight lift on hover */
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-sm py-4 fixed w-full z-50 top-0">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-indigo-700 rounded-lg p-2 mb-4 md:mb-0">Woodworth AI</a>
+            <nav class="flex flex-wrap justify-center md:justify-end space-x-4">
+                <a href="#home"
+                    class="nav-link text-gray-600 hover:text-indigo-700 mx-2 py-2 rounded-lg transition duration-300 font-medium"
+                    data-target="home-section">Home</a>
+                <a href="#services"
+                    class="nav-link text-gray-600 hover:text-indigo-700 mx-2 py-2 rounded-lg transition duration-300 font-medium"
+                    data-target="services-section">Services</a>
+                <a href="#about"
+                    class="nav-link text-gray-600 hover:text-indigo-700 mx-2 py-2 rounded-lg transition duration-300 font-medium"
+                    data-target="about-section">About</a>
+                <a href="#blog"
+                    class="nav-link text-gray-600 hover:text-indigo-700 mx-2 py-2 rounded-lg transition duration-300 font-medium"
+                    data-target="blog-section">Blog</a>
+                <a href="#contact"
+                    class="nav-link bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md font-medium"
+                    data-target="contact-section">Get Audit</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="pt-20"> <!-- Padding top to account for fixed header -->
+
+        <!-- Home Section (Expanded Landing Page Content) -->
+        <section id="home-section" class="page-section active py-16 md:py-24 bg-white">
+            <!-- Hero Section -->
+            <div class="bg-gradient-to-r from-indigo-600 to-purple-700 text-white py-20 md:py-32 text-center shadow-lg">
+                <div class="container mx-auto px-4">
+                    <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6 rounded-lg p-2">
+                        Unlock Your Business's Full Potential with AI
+                    </h1>
+                    <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto opacity-90">
+                        Woodworth AI provides practical, tailored AI solutions and infrastructure to help Small and
+                        Medium-sized Businesses thrive in the digital age.
+                    </p>
+                    <a href="#contact"
+                        class="nav-link bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105"
+                        data-target="contact-section">
+                        Start Your Free AI Audit Today!
+                    </a>
+                </div>
+            </div>
+
+            <!-- Problem/Solution Section -->
+            <div class="container mx-auto px-4 py-16 text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 rounded-lg p-2">
+                    Are You Facing These Business Challenges?
+                </h2>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    Many Small and Medium-sized Businesses struggle with:
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mb-8 max-w-2xl mx-auto text-left space-y-2">
+                    <li>Overwhelmed customer support teams handling repetitive inquiries.</li>
+                    <li>Inefficient manual processes that consume valuable time and resources.</li>
+                    <li>Difficulty extracting actionable insights from large amounts of data.</li>
+                    <li>Struggling to personalize marketing efforts and reach the right audience.</li>
+                    <li>Uncertainty about how to leverage new technologies like AI for growth.</li>
+                </ul>
+                <p class="text-lg text-gray-700 leading-relaxed font-semibold">
+                    Woodworth AI is here to transform these challenges into opportunities.
+                </p>
+            </div>
+
+            <!-- Summary of Service Approach (from Services section, adapted for homepage) -->
+            <div class="bg-gray-50 py-16">
+                <div class="container mx-auto px-4">
+                    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 rounded-lg p-2">
+                        Our Simple Path to AI Success
+                    </h2>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <!-- Service Step 1: Free AI Audit -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <div
+                                class="flex items-center justify-center w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full mb-6 mx-auto text-3xl font-bold">
+                                1</div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Free AI Audit</h3>
+                            <p class="text-gray-600 text-center">
+                                We identify AI opportunities tailored to your business needs.
+                            </p>
+                        </div>
+
+                        <!-- Service Step 2: Project-Based Work -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <div
+                                class="flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mb-6 mx-auto text-3xl font-bold">
+                                2</div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Project-Based Solutions
+                            </h3>
+                            <p class="text-gray-600 text-center">
+                                We deliver immediate value with focused, high-impact AI projects.
+                            </p>
+                        </div>
+
+                        <!-- Service Step 3: Long-Term Partnership -->
+                        <div class="bg-white p-8 rounded-xl shadow-lg">
+                            <div
+                                class="flex items-center justify-center w-16 h-16 bg-teal-100 text-teal-600 rounded-full mb-6 mx-auto text-3xl font-bold">
+                                3</div>
+                            <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Long-Term AI
+                                Infrastructure</h3>
+                            <p class="text-gray-600 text-center">
+                                We build lasting partnerships for sustained AI-driven growth.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center mt-12">
+                        <a href="#services"
+                            class="nav-link bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md font-medium"
+                            data-target="services-section">
+                            Learn More About Our Services
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Why Choose Woodworth AI / Benefits Section -->
+            <div class="container mx-auto px-4 py-16 text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 rounded-lg p-2">
+                    Why Partner with Woodworth AI?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left">
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl text-indigo-700 mb-2">Tailored Solutions</h3>
+                        <p class="text-gray-700">We don't believe in one-size-fits-all. Our AI solutions are
+                            custom-designed to meet your unique business challenges and goals.</p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl text-purple-700 mb-2">Practical & Actionable</h3>
+                        <p class="text-gray-700">We focus on real-world implementation that delivers tangible results
+                            and a clear return on your investment.</p>
+                    </div>
+                    <div class="bg-teal-50 p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl text-teal-700 mb-2">Expert Guidance</h3>
+                        <p class="text-gray-700">Benefit from Jake's unique blend of analytical thinking, leadership,
+                            and teaching skills to navigate the AI landscape with confidence.</p>
+                    </div>
+                    <div class="bg-orange-50 p-6 rounded-lg shadow-md">
+                        <h3 class="font-bold text-xl text-orange-700 mb-2">Future-Proof Your Business</h3>
+                        <p class="text-gray-700">Stay competitive and relevant by integrating scalable AI infrastructure
+                            that grows with your business.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials Placeholder -->
+            <div class="container mx-auto px-4 py-16 text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 rounded-lg p-2">
+                    What Our Clients Say
+                </h2>
+                <div class="bg-indigo-50 p-8 rounded-xl shadow-lg">
+                    <p class="text-xl text-indigo-700 italic mb-4">"Working with Woodworth AI was a game-changer for our
+                        small business. Their AI audit quickly identified key areas for improvement, and the solutions
+                        they implemented have significantly boosted our efficiency. Highly recommend!"</p>
+                    <p class="font-semibold text-indigo-800">- Sarah L., Owner, Local Boutique</p>
+                    <p class="text-sm text-indigo-600 mt-4">(This section will feature a dynamic testimonial
+                        slider/carousel with real client feedback as we grow!)</p>
+                </div>
+            </div>
+
+            <!-- Call to Action Section (Repeated for convenience on landing page) -->
+            <div class="bg-indigo-700 text-white py-16 md:py-24 text-center shadow-inner">
+                <div class="container mx-auto px-4 max-w-3xl">
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6 rounded-lg p-2">
+                        Ready to Transform Your Business with AI?
+                    </h2>
+                    <p class="text-lg md:text-xl mb-8 opacity-90">
+                        Let's discover how Woodworth AI can streamline your operations, boost efficiency, and unlock new
+                        opportunities.
+                    </p>
+                    <a href="#contact"
+                        class="nav-link bg-white text-indigo-700 font-bold py-4 px-10 rounded-full text-xl hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105"
+                        data-target="contact-section">
+                        Schedule Your Free AI Audit
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Jake & Unique Approach Section -->
+        <section id="about-section" class="page-section py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 text-center max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 rounded-lg p-2">
+                    Meet Jake: Your Partner in AI Innovation
+                </h2>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    As a 20-year-old college student and entrepreneur, I founded Woodworth AI to help businesses like
+                    yours harness the power of artificial intelligence. My diverse background as a <strong
+                        class="text-indigo-600">thinker, philosopher, writer, psychologist, leader, and teacher</strong>
+                    profoundly influences my unique approach.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    My greatest strength is <strong class="text-indigo-600">adaptability and innovation</strong>, honed
+                    through attending "nine schools in eleven years." This experience makes me uniquely suited to
+                    navigate the fast-paced AI industry and craft dynamic solutions for your business. I'm driven by a
+                    passion to help you pursue your best, both personally and professionally.
+                </p>
+                <h3 class="text-2xl font-semibold text-gray-800 mt-12 mb-4">Our Mission & Values</h3>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                    **Mission:** To support Small and Medium-sized Businesses in the pursuit of their best, leveraging
+                    intelligent AI solutions to drive growth, efficiency, and innovation.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
+                    <div class="bg-indigo-50 p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-xl text-indigo-700 mb-2">Integrity</h4>
+                        <p class="text-gray-700">Operating with transparency and honesty in every client interaction.
+                        </p>
+                    </div>
+                    <div class="bg-purple-50 p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-xl text-purple-700 mb-2">Innovation</h4>
+                        <p class="text-gray-700">Continuously learning and applying cutting-edge AI solutions.</p>
+                    </div>
+                    <div class="bg-teal-50 p-6 rounded-lg shadow-md">
+                        <h4 class="font-bold text-xl text-teal-700 mb-2">Client-Centricity</h4>
+                        <p class="text-gray-700">Tailoring solutions to unique business needs and fostering long-term
+                            partnerships.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services-section" class="page-section py-16 md:py-24 bg-gray-50">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 rounded-lg p-2">
+                    Our Structured Approach to AI Success
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <!-- Service Step 1: Free AI Audit -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="flex items-center justify-center w-16 h-16 bg-indigo-100 text-indigo-600 rounded-full mb-6 mx-auto text-3xl font-bold">
+                            1</div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Free AI Audit</h3>
+                        <p class="text-gray-600 text-center">
+                            We start by understanding your current operations and identifying key areas where AI can
+                            drive efficiency, reduce costs, and create new opportunities. No obligation, just insights.
+                        </p>
+                    </div>
+
+                    <!-- Service Step 2: Project-Based Work -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="flex items-center justify-center w-16 h-16 bg-purple-100 text-purple-600 rounded-full mb-6 mx-auto text-3xl font-bold">
+                            2</div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Project-Based Solutions</h3>
+                        <p class="text-gray-600 text-center">
+                            After the audit, we tackle specific, high-impact projects (e.g., automating customer
+                            support, data analysis, content generation) to demonstrate immediate value and ROI.
+                        </p>
+                    </div>
+
+                    <!-- Service Step 3: Long-Term Partnership -->
+                    <div
+                        class="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                        <div
+                            class="flex items-center justify-center w-16 h-16 bg-teal-100 text-teal-600 rounded-full mb-6 mx-auto text-3xl font-bold">
+                            3</div>
+                        <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">Long-Term AI Infrastructure
+                        </h3>
+                        <p class="text-gray-600 text-center">
+                            Our ultimate goal is to build lasting partnerships, implementing robust AI infrastructure
+                            that continuously scales with your business and ensures sustained growth.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="mt-16 text-center">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-6">Specific AI Solutions for SMBs</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-xl text-indigo-700 mb-2">AI for Customer Support</h4>
+                            <p class="text-gray-700">Implement chatbots and AI-powered tools to handle routine
+                                inquiries, improve response times, and free up your team.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-xl text-purple-700 mb-2">Marketing Automation</h4>
+                            <p class="text-gray-700">Leverage AI for personalized email campaigns, predictive analytics
+                                for customer behavior, and optimized ad spending.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-xl text-teal-700 mb-2">Data Analytics & Insights</h4>
+                            <p class="text-gray-700">Transform raw data into actionable insights, identify trends, and
+                                make data-driven decisions with AI-powered analytics.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-xl text-indigo-700 mb-2">Content Generation & Curation</h4>
+                            <p class="text-gray-700">Automate the creation of marketing copy, social media posts, and
+                                even basic reports, saving time and resources.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-xl text-purple-700 mb-2">Process Optimization</h4>
+                            <p class="text-gray-700">Identify bottlenecks and automate repetitive tasks across your
+                                business operations, from HR to supply chain.</p>
+                        </div>
+                        <div class="bg-white p-6 rounded-lg shadow-md">
+                            <h4 class="font-bold text-xl text-teal-700 mb-2">Predictive Insights</h4>
+                            <p class="text-gray-700">Use AI to forecast sales, predict equipment failures, or anticipate
+                                market shifts, giving you a competitive edge.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Placeholder for Testimonials Slider/Carousel -->
+                <div class="mt-16 text-center bg-indigo-50 p-8 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-semibold text-indigo-800 mb-4">What Our Clients Say</h3>
+                    <p class="text-indigo-700 italic">"Woodworth AI transformed our operations. Jake's insights were
+                        invaluable!" - Satisfied SMB Client</p>
+                    <p class="text-sm text-indigo-600 mt-2">(This section will feature a dynamic testimonial
+                        slider/carousel with real client feedback)</p>
+                </div>
+
+                <!-- ✨ AI Solution Brainstormer -->
+                <div class="mt-16 bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">✨ AI Solution Brainstormer</h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                        Describe a business challenge, and our AI will suggest potential solutions.
+                    </p>
+                    <div class="flex flex-col gap-4 max-w-xl mx-auto">
+                        <textarea id="challengeInput"
+                            class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500"
+                            rows="4"
+                            placeholder="e.g., 'Our customer support team is overwhelmed with repetitive questions.'"></textarea>
+                        <button id="brainstormBtn"
+                            class="bg-indigo-600 text-white px-6 py-3 rounded-lg hover:bg-indigo-700 transition duration-300 shadow-md font-medium">
+                            ✨ Brainstorm AI Solutions
+                        </button>
+                        <div id="brainstormResult" class="mt-4 p-4 bg-indigo-50 rounded-lg text-gray-800 hidden">
+                            <p class="font-semibold mb-2">Suggested AI Solutions:</p>
+                            <div id="brainstormOutput" class="whitespace-pre-wrap"></div>
+                        </div>
+                        <div id="brainstormLoading" class="hidden text-center text-indigo-600 mt-4">
+                            Generating ideas...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Blog/Resources Section -->
+        <section id="blog-section" class="page-section py-16 md:py-24 bg-white">
+            <div class="container mx-auto px-4 max-w-4xl">
+                <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12 rounded-lg p-2">
+                    Insights & Resources from Woodworth AI
+                </h2>
+                <p class="text-lg text-gray-700 mb-8 text-center">
+                    Leveraging Jake's background as a writer and teacher, this section provides valuable content on AI
+                    for small and medium-sized businesses.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Blog Post 1 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">The SMB AI Readiness Checklist</h3>
+                        <p class="text-gray-600 text-sm mb-4">Published: July 10, 2025</p>
+                        <p class="text-gray-700 mb-4">
+                            Are you ready to integrate AI into your business? This comprehensive checklist will help you
+                            assess your current state and identify key areas for AI adoption.
+                        </p>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Read More & Download</a>
+                    </div>
+                    <!-- Blog Post 2 -->
+                    <div class="bg-gray-50 p-6 rounded-xl shadow-lg">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">5 Ways AI Can Boost Your Small Business
+                            Efficiency</h3>
+                        <p class="text-gray-600 text-sm mb-4">Published: June 25, 2025</p>
+                        <p class="text-gray-700 mb-4">
+                            Discover practical, actionable strategies to leverage artificial intelligence for improved
+                            productivity and reduced operational costs.
+                        </p>
+                        <a href="#" class="text-indigo-600 hover:text-indigo-800 font-medium">Read More</a>
+                    </div>
+                </div>
+
+                <!-- Newsletter Signup Placeholder -->
+                <div class="mt-16 text-center bg-purple-50 p-8 rounded-xl shadow-inner">
+                    <h3 class="text-2xl font-semibold text-purple-800 mb-4">Stay Ahead with Our AI Insights</h3>
+                    <p class="text-purple-700 mb-6">Sign up for our newsletter to receive the latest AI trends, tips for
+                        SMBs, and exclusive offers directly in your inbox.</p>
+                    <form onsubmit="alert('Thank you for signing up!'); return false;"
+                        class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                        <input type="email" placeholder="Your Email Address"
+                            class="flex-grow p-3 rounded-lg border border-purple-300 focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                            required>
+                        <button type="submit"
+                            class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300 shadow-md">Subscribe</button>
+                    </form>
+                </div>
+
+                <!-- ✨ Blog Post Idea Generator -->
+                <div class="mt-16 bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4 text-center">✨ Blog Post Idea Generator</h3>
+                    <p class="text-gray-700 mb-6 text-center">
+                        Enter a topic, and our AI will suggest blog post ideas for your business.
+                    </p>
+                    <div class="flex flex-col gap-4 max-w-xl mx-auto">
+                        <input type="text" id="blogTopicInput"
+                            class="w-full p-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-indigo-500"
+                            placeholder="e.g., 'AI for marketing' or 'small business automation'">
+                        <button id="generateBlogIdeasBtn"
+                            class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300 shadow-md font-medium">
+                            ✨ Generate Blog Ideas
+                        </button>
+                        <div id="blogIdeasResult" class="mt-4 p-4 bg-purple-50 rounded-lg text-gray-800 hidden">
+                            <p class="font-semibold mb-2">Suggested Blog Post Ideas:</p>
+                            <div id="blogIdeasOutput" class="whitespace-pre-wrap"></div>
+                        </div>
+                        <div id="blogIdeasLoading" class="hidden text-center text-purple-600 mt-4">
+                            Generating ideas...
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact-section"
+            class="page-section bg-indigo-700 text-white py-16 md:py-24 text-center shadow-inner">
+            <div class="container mx-auto px-4 max-w-3xl">
+                <h2 class="text-3xl md:text-5xl font-bold mb-6 rounded-lg p-2">
+                    Ready to Transform Your Business with AI?
+                </h2>
+                <p class="text-lg md:text-xl mb-8 opacity-90">
+                    Let's discover how Woodworth AI can streamline your operations, boost efficiency, and unlock new
+                    opportunities. Fill out the form below to schedule your free AI audit.
+                </p>
+
+                <!-- Contact Form -->
+                <form onsubmit="alert('Thank you for your inquiry! We will get back to you shortly.'); return false;"
+                    class="bg-white p-8 rounded-xl shadow-xl text-gray-800 text-left">
+                    <div class="mb-6">
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Full Name</label>
+                        <input type="text" id="name" name="name"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Business Email</label>
+                        <input type="email" id="email" name="email"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-500"
+                            placeholder="your@business.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="company" class="block text-gray-700 text-sm font-bold mb-2">Company Name</label>
+                        <input type="text" id="company" name="company"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Your Company" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">How can Woodworth AI
+                            help you?</label>
+                        <textarea id="message" name="message" rows="5"
+                            class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:ring-2 focus:ring-indigo-500"
+                            placeholder="Tell us about your AI needs or challenges..." required></textarea>
+                    </div>
+                    <div class="flex items-center justify-center">
+                        <button type="submit"
+                            class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-700 transition duration-300 shadow-xl transform hover:scale-105">
+                            Submit Request for Free Audit
+                        </button>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-4 text-center">
+                        (Note: Form submissions are simulated for this prototype. In a live site, this would connect to
+                        a backend.)
+                    </p>
+                    <!-- Placeholder for Calendar Integration -->
+                    <div class="mt-8 text-center bg-gray-100 p-6 rounded-lg shadow-inner">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-3">Prefer to book directly?</h4>
+                        <p class="text-gray-700 mb-4">You can also schedule a call directly using our integrated
+                            calendar:</p>
+                        <a href="https://calendar.google.com/calendar/u/0/appointments/s/your-google-calendar-booking-link"
+                            target="_blank"
+                            class="bg-purple-600 text-white px-6 py-3 rounded-lg hover:bg-purple-700 transition duration-300 shadow-md inline-block">
+                            Book on Google Calendar
+                        </a>
+                        <p class="text-sm text-gray-500 mt-2">(Replace with your actual Google Calendar booking link)
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button onclick="topFunction()" id="scrollToTopBtn" title="Go to top">↑</button>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-300 py-8 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2025 Woodworth AI. All rights reserved.</p>
+            <p class="mt-2 text-sm">Empowering SMBs with Intelligent Solutions.</p>
+            <div class="mt-4 flex justify-center space-x-4">
+                <!-- Social Media Links (Placeholders) -->
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">LinkedIn</a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300">Twitter</a>
+                <!-- Add more social media links as needed -->
+            </div>
+            <div class="mt-4 text-sm">
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Privacy Policy</a>
+                <span class="text-gray-500">|</span>
+                <a href="#" class="text-gray-400 hover:text-white mx-2">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for navigation and scroll-to-top button
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('.page-section');
+            const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+            // Function to show the active section and hide others
+            const showSection = (targetId) => {
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    targetSection.classList.add('active');
+                    // Scroll to the top of the displayed section
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            };
+
+            // Handle navigation clicks
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); // Prevent default anchor link behavior
+                    const targetId = e.target.dataset.target; // Get the data-target attribute
+                    showSection(targetId);
+
+                    // Update URL hash without reloading
+                    history.pushState(null, '', e.target.getAttribute('href'));
+                });
+            });
+
+            // Handle initial load based on URL hash
+            const initialHash = window.location.hash.substring(1); // Remove '#'
+            if (initialHash) {
+                const targetSectionId = initialHash + '-section'; // Assuming section IDs match hash + '-section'
+                const sectionExists = document.getElementById(targetSectionId);
+                if (sectionExists) {
+                    showSection(targetSectionId);
+                } else {
+                    // Default to home if hash doesn't match a section
+                    showSection('home-section');
+                }
+            } else {
+                // Default to home section if no hash
+                showSection('home-section');
+            }
+
+            // Scroll to top button logic
+            window.onscroll = function () { scrollFunction() };
+
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    scrollToTopBtn.style.display = "block";
+                } else {
+                    scrollToTopBtn.style.display = "none";
+                }
+            }
+
+            function topFunction() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+            // Expose topFunction globally for the button's onclick attribute
+            window.topFunction = topFunction;
+
+            // --- Gemini API Integration Functions ---
+
+            // Function to call Gemini API
+            async function callGeminiAPI(prompt, outputElement, loadingElement) {
+                outputElement.classList.add('hidden');
+                loadingElement.classList.remove('hidden');
+
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                const payload = { contents: chatHistory };
+                const apiKey = ""; // Canvas will automatically provide this in runtime
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        const text = result.candidates[0].content.parts[0].text;
+                        outputElement.innerHTML = text.replace(/\n/g, '<br>'); // Preserve newlines
+                        outputElement.classList.remove('hidden');
+                    } else {
+                        outputElement.innerHTML = 'Error: Could not generate response. Please try again.';
+                        outputElement.classList.remove('hidden');
+                        console.error('Gemini API response structure unexpected:', result);
+                    }
+                } catch (error) {
+                    outputElement.innerHTML = 'Error: Failed to connect to AI. Please check your network or try again later.';
+                    outputElement.classList.remove('hidden');
+                    console.error('Error calling Gemini API:', error);
+                } finally {
+                    loadingElement.classList.add('hidden');
+                }
+            }
+
+            // AI Solution Brainstormer Logic
+            const challengeInput = document.getElementById('challengeInput');
+            const brainstormBtn = document.getElementById('brainstormBtn');
+            const brainstormOutput = document.getElementById('brainstormOutput');
+            const brainstormResultDiv = document.getElementById('brainstormResult');
+            const brainstormLoading = document.getElementById('brainstormLoading');
+
+            if (brainstormBtn) {
+                brainstormBtn.addEventListener('click', async () => {
+                    const challenge = challengeInput.value.trim();
+                    if (challenge) {
+                        const prompt = `Given the business challenge: "${challenge}", suggest 3-5 potential AI solutions that an SMB could implement. Be concise and practical. Format as a bulleted list.`;
+                        await callGeminiAPI(prompt, brainstormOutput, brainstormLoading);
+                        brainstormResultDiv.classList.remove('hidden');
+                    } else {
+                        alert('Please describe a business challenge to brainstorm solutions.');
+                    }
+                });
+            }
+
+
+            // Blog Post Idea Generator Logic
+            const blogTopicInput = document.getElementById('blogTopicInput');
+            const generateBlogIdeasBtn = document.getElementById('generateBlogIdeasBtn');
+            const blogIdeasOutput = document.getElementById('blogIdeasOutput');
+            const blogIdeasResultDiv = document.getElementById('blogIdeasResult');
+            const blogIdeasLoading = document.getElementById('blogIdeasLoading');
+
+            if (generateBlogIdeasBtn) {
+                generateBlogIdeasBtn.addEventListener('click', async () => {
+                    const topic = blogTopicInput.value.trim();
+                    if (topic) {
+                        const prompt = `Generate 3-5 blog post ideas/titles about: "${topic}", focusing on how it relates to AI for Small and Medium-sized Businesses (SMBs). Format as a numbered list.`;
+                        await callGeminiAPI(prompt, blogIdeasOutput, blogIdeasLoading);
+                        blogIdeasResultDiv.classList.remove('hidden');
+                    } else {
+                        alert('Please enter a topic to generate blog ideas.');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

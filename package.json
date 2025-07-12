@@ -1,0 +1,25 @@
+{
+    "name": "woodworth-ai-website",
+    "version": "1.0.0",
+    "description": "Official website for Woodworth AI, offering AI consulting and solutions for Small and Medium-sized Businesses (SMBs).",
+    "main": "index.html",
+    "scripts": {
+        "start": "live-server --port=3000",
+        "dev": "live-server --port=3000",
+        "build": "echo 'No build steps needed for static HTML. Netlify will deploy from root.'",
+        "test": "echo \"No tests specified\" && exit 0"
+    },
+    "keywords": [
+        "AI",
+        "consulting",
+        "SMB",
+        "artificial intelligence",
+        "web development",
+        "static site"
+    ],
+    "author": "Jake Woodworth",
+    "license": "MIT",
+    "devDependencies": {
+        "live-server": "^1.2.2"
+    }
+}
