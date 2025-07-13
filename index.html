@@ -59,13 +59,13 @@
         <div class="container mx-auto px-4 relative flex items-center justify-center h-16">
             <!-- Left side: Woodworth AI text logo -->
             <!-- Positioned absolutely to the left within the relative container -->
-            <a href="home" class="rounded-lg p-1 md:p-2 absolute left-4 top-1/2 -translate-y-1/2">
+            <a href="#home" class="rounded-lg p-1 md:p-2 absolute left-4 top-1/2 -translate-y-1/2">
                 <span class="text-xl md:text-3xl font-bold text-indigo-700 whitespace-nowrap">Woodworth AI</span>
             </a>
 
             <!-- Center: Image Logo -->
             <!-- This element is centered by the parent flex container's justify-center -->
-            <a href="home" class="rounded-lg p-1 md:p-2">
+            <a href="#home" class="rounded-lg p-1 md:p-2">
                 <img src="favicon3.png" alt="Woodworth AI Logo" class="h-10 md:h-12 w-auto">
             </a>
 
@@ -90,7 +90,7 @@
                 Why "Woodworth AI?" I didn't want to sound like every other AI company. It's my last name, simple, genuine, and easy to remember. It's me, Jake Woodworth, and this is my commitment to you.
             </p>
             <!-- Call-to-Action Button -->
-            <a href="contact-form" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
+            <a href="#contact-form" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
                 Ready to Upgrade? Start Your Free AI Strategy Session Today!
             </a>
         </div>
@@ -155,14 +155,14 @@
     <section class="py-12 bg-indigo-50 text-center">
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-6">Experience AI That Works.</h2>
-            <a href="contact-form" class="bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-800 transition duration-300 shadow-xl transform hover:scale-105">
+            <a href="#contact-form" class="bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-800 transition duration-300 shadow-xl transform hover:scale-105">
                 Start Your Free Strategy Session Today!
             </a>
         </div>
     </section>
 
     <!-- Lead Generation Form Section -->
-    <section id="contact-form" class="py-16 md:py-24">
+    <section id="#contact-form" class="py-16 md:py-24">
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10">
                 Time to Ditch the Dull Stuff and Get Seriously Efficient?
@@ -319,7 +319,7 @@
             // IMPORTANT: Replace this with your actual API endpoint URL
             // This endpoint will receive the form data and then send it to Airtable.
             // You'll need to set up this endpoint (e.g., a serverless function, Zapier webhook).
-            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook-test/2abecff3-1266-4bdd-a10d-490abbddf16'; // <<< REPLACE THIS
+            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook-test/2abecff3-1266-4bdd-a10d-490ab5bddf16'; // <<< REPLACE THIS
 
             try {
                 const response = await fetch(AIRTABLE_API_ENDPOINT_URL, {
