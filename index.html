@@ -56,22 +56,22 @@
 
     <!-- Header (Minimal) -->
     <header class="py-4">
-        <div class="container mx-auto px-4 flex justify-between items-center">
+        <div class="container mx-auto px-4 relative flex items-center justify-center h-16">
             <!-- Left side: Woodworth AI text logo -->
-            <a href="" class="rounded-lg p-1 md:p-2 flex-shrink-0">
+            <!-- Positioned absolutely to the left within the relative container -->
+            <a href="#" class="rounded-lg p-1 md:p-2 absolute left-4 top-1/2 -translate-y-1/2">
                 <span class="text-xl md:text-3xl font-bold text-indigo-700 whitespace-nowrap">Woodworth AI</span>
             </a>
 
             <!-- Center: Image Logo -->
-            <!-- This div will take up available space and center its content -->
-            <div class="flex-grow flex justify-center">
-                <a href="" class="rounded-lg p-1 md:p-2">
-                    <img src="favicon3.png" alt="Woodworth AI Logo" class="h-8 md:h-12 w-auto">
-                </a>
-            </div>
+            <!-- This element is centered by the parent flex container's justify-center -->
+            <a href="#" class="rounded-lg p-1 md:p-2">
+                <img src="favicon3.png" alt="Woodworth AI Logo" class="h-10 md:h-12 w-auto">
+            </a>
 
             <!-- Right side: Free Audit Button -->
-            <a href="contact-form" class="bg-indigo-700 text-white font-bold py-2 px-4 rounded-full text-sm md:text-lg hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 flex-shrink-0 whitespace-nowrap">
+            <!-- Positioned absolutely to the right within the relative container -->
+            <a href="contact-form" class="bg-indigo-700 text-white font-bold py-2 px-4 rounded-full text-sm md:text-lg hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 whitespace-nowrap absolute right-4 top-1/2 -translate-y-1/2">
                 Free Audit
             </a>
         </div>
