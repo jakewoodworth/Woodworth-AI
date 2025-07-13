@@ -11,6 +11,9 @@
     <!-- Google Fonts - Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
+        html {
+            scroll-behavior: smooth; /* Keep smooth scroll for general anchors */
+        }
         body {
             font-family: 'Inter', sans-serif;
             background-color: #f8fafc; /* Light blue-gray background from original landing page */
@@ -55,7 +58,7 @@
 <body class="antialiased techy-bg">
 
     <!-- Header (Minimal) -->
-    <header class="py-4">
+    <header class="py-4" id="main-header"> <!-- Added ID for JS height calculation -->
         <div class="container mx-auto px-4 relative flex items-center justify-center h-16">
             <!-- Left side: Woodworth AI text logo -->
             <!-- Positioned absolutely to the left within the relative container -->
@@ -70,15 +73,15 @@
             </a>
 
             <!-- Right side: Free Strategy Session Button -->
-            <!-- Positioned absolutely to the right within the relative container -->
-            <a href="contact-form" class="bg-indigo-700 text-white font-bold py-2 px-4 rounded-full text-sm md:text-lg hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 whitespace-nowrap absolute right-4 top-1/2 -translate-y-1/2">
+            <!-- Changed href to call JS function -->
+            <a href="#" onclick="scrollToForm(event)" class="bg-indigo-700 text-white font-bold py-2 px-4 rounded-full text-sm md:text-lg hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 whitespace-nowrap absolute right-4 top-1/2 -translate-y-1/2">
                 Free Strategy Session
             </a>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="py-16 md:py-24 text-center hero-gradient text-white shadow-lg">
+    <section id="home" class="py-16 md:py-24 text-center hero-gradient text-white shadow-lg">
         <div class="container mx-auto px-4 max-w-4xl">
             <h1 class="text-4xl md:text-5xl font-extrabold leading-tight mb-6 drop-shadow-md">
                 No BS. Just AI That Works. (And We'll Tell You Exactly How.)
@@ -89,8 +92,8 @@
             <p class="text-base md:text-lg mb-10 max-w-2xl mx-auto opacity-90 italic">
                 Why "Woodworth AI?" I didn't want to sound like every other AI company. It's my last name, simple, genuine, and easy to remember. It's me, Jake Woodworth, and this is my commitment to you.
             </p>
-            <!-- Call-to-Action Button -->
-            <a href="#contact-form" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
+            <!-- Call-to-Action Button - Changed href to call JS function -->
+            <a href="#" onclick="scrollToForm(event)" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
                 Ready to Upgrade? Start Your Free AI Strategy Session Today!
             </a>
         </div>
@@ -155,14 +158,15 @@
     <section class="py-12 bg-indigo-50 text-center">
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-6">Experience AI That Works.</h2>
-            <a href="#contact-form" class="bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-800 transition duration-300 shadow-xl transform hover:scale-105">
+            <!-- Changed href to call JS function -->
+            <a href="#" onclick="scrollToForm(event)" class="bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-800 transition duration-300 shadow-xl transform hover:scale-105">
                 Start Your Free Strategy Session Today!
             </a>
         </div>
     </section>
 
     <!-- Lead Generation Form Section -->
-    <section id="#contact-form" class="py-16 md:py-24">
+    <section id="contact-form" class="py-16 md:py-24">
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-10">
                 Time to Ditch the Dull Stuff and Get Seriously Efficient?
@@ -268,6 +272,26 @@
     </footer>
 
     <script>
+        // --- Smooth Scroll Function ---
+        function scrollToForm(event) {
+            event.preventDefault(); // Prevent default anchor link behavior
+
+            const formSection = document.getElementById('contact-form');
+            const header = document.getElementById('main-header'); // Get the header element
+
+            if (formSection && header) {
+                const headerHeight = header.offsetHeight; // Get the dynamic height of the header
+                const formSectionTop = formSection.getBoundingClientRect().top + window.pageYOffset;
+                // Calculate scroll position to place the top of the form just below the header
+                const scrollPosition = formSectionTop + 670; 
+
+                window.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
         // --- Modal Functions ---
         function showModal(title, message, isSuccess = true) {
             const modal = document.getElementById('success-modal');
@@ -319,7 +343,7 @@
             // IMPORTANT: Replace this with your actual API endpoint URL
             // This endpoint will receive the form data and then send it to Airtable.
             // You'll need to set up this endpoint (e.g., a serverless function, Zapier webhook).
-            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook-test/2abecff3-1266-4bdd-a10d-490ab5bddf16'; // <<< REPLACE THIS
+            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook/2abecff3-1266-4bdd-a10d-490abbddf16'; // <<< REPLACE THIS
 
             try {
                 const response = await fetch(AIRTABLE_API_ENDPOINT_URL, {
@@ -333,7 +357,7 @@
 
                 if (response.ok) {
                     // Form submitted successfully
-                    showModal('Success!', 'Thank you for contacting Woodworth AI. We\'ve received your request for a Free AI Strategy Session and will be in touch shortly to schedule your session!', true);
+                    showModal('Success!', 'Thank you for contacting Woodworth AI. We\'ve received your request for a Free AI Strategy Session and will be in touch shortly to schedule your session! We will be in touch within 24 hours.', true);
                     form.reset(); // Clear the form
                 } else {
                     // Handle API errors
@@ -344,10 +368,11 @@
             } catch (error) {
                 console.error('Network error during form submission:', error);
                 showModal('Network Error', 'Could not connect to the server. Please check your internet connection and try again.', false);
+                console.error("Please ensure the AIRTABLE_API_ENDPOINT_URL is correctly configured and accessible.");
             } finally {
                 // Re-enable button and reset text
                 submitButton.disabled = false;
-                submitButton.textContent = 'Request Your Free Strategy Session';
+                submitButton.textContent = 'Request Your Free AI Strategy Session';
                 submitButton.classList.remove('opacity-75', 'cursor-not-allowed');
             }
         }
