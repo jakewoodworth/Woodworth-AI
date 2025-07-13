@@ -56,22 +56,22 @@
 
     <!-- Header (Minimal) -->
     <header class="py-4">
-        <div class="container mx-auto px-4 flex items-center relative">
+        <div class="container mx-auto px-4 flex justify-between items-center">
             <!-- Left side: Woodworth AI text logo -->
-            <!-- Positioned absolutely to the left within the relative container -->
-            <a href="#" class="rounded-lg p-2 absolute left-4">
-                <span class="text-3xl font-bold text-indigo-700">Woodworth AI</span>
+            <a href="" class="rounded-lg p-1 md:p-2 flex-shrink-0">
+                <span class="text-xl md:text-3xl font-bold text-indigo-700 whitespace-nowrap">Woodworth AI</span>
             </a>
 
             <!-- Center: Image Logo -->
-            <!-- Uses mx-auto to center itself within the remaining space of the flex container -->
-            <a href="#" class="rounded-lg p-2 mx-auto">
-                <img src="favicon3.png" alt="Woodworth AI Logo" class="h-10 md:h-12 w-auto">
-            </a>
+            <!-- This div will take up available space and center its content -->
+            <div class="flex-grow flex justify-center">
+                <a href="" class="rounded-lg p-1 md:p-2">
+                    <img src="favicon3.png" alt="Woodworth AI Logo" class="h-8 md:h-12 w-auto">
+                </a>
+            </div>
 
             <!-- Right side: Free Audit Button -->
-            <!-- Positioned absolutely to the right within the relative container -->
-            <a href="#contact-form-section" class="bg-indigo-700 text-white font-bold py-2 px-6 rounded-full text-lg hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 absolute right-4">
+            <a href="contact-form" class="bg-indigo-700 text-white font-bold py-2 px-4 rounded-full text-sm md:text-lg hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 flex-shrink-0 whitespace-nowrap">
                 Free Audit
             </a>
         </div>
@@ -87,7 +87,7 @@
                 Woodworth AI provides practical, tailored AI solutions and infrastructure to help Small and Medium-sized Businesses thrive in the digital age.
             </p>
             <!-- Call-to-Action Button - From original landing page (white background, indigo text) -->
-            <a href="#contact-form-section" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
+            <a href="contact-form" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
                 Start Your Free AI Audit Today!
             </a>
         </div>
