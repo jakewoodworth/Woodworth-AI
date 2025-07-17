@@ -12,9 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         html {
-            scroll-behavior: smooth;
-            /* Added scroll-padding-top to account for the fixed header height */
-            scroll-padding-top: 6rem; /* Adjust this value if needed to fine-tune the scroll position */
+            scroll-behavior: smooth; /* Keep smooth scroll for general anchors */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -76,7 +74,7 @@
 
             <!-- Right side: Free Strategy Session Button -->
             <!-- Changed href to call JS function -->
-            <a href="#" onclick="scrollToForm(event)" class="bg-indigo-700 text-white font-bold py-2 px-4 rounded-full text-sm md:text-lg hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 whitespace-nowrap absolute right-4 top-1/2 -translate-y-1/2">
+            <a href="#" onclick="scrollToForm(event)" class="bg-indigo-700 text-white font-bold py-2 px-3 text-xs sm:px-4 sm:text-sm md:text-lg rounded-full hover:bg-indigo-800 transition duration-300 shadow-md transform hover:scale-105 whitespace-nowrap absolute right-4 top-1/2 -translate-y-1/2">
                 Free Strategy Session
             </a>
         </div>
@@ -95,7 +93,7 @@
                 Why "Woodworth AI?" I didn't want to sound like every other AI company. It's my last name, simple, genuine, and easy to remember. It's me, Jake Woodworth, and this is my commitment to you.
             </p>
             <!-- Call-to-Action Button - Changed href to call JS function -->
-            <a href="#" onclick="scrollToForm(event)" class="bg-white text-indigo-700 font-bold py-3 px-8 rounded-full text-lg hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
+            <a href="#" onclick="scrollToForm(event)" class="bg-white text-indigo-700 font-bold py-3 px-6 text-base sm:px-8 sm:text-lg rounded-full hover:bg-gray-100 transition duration-300 shadow-xl transform hover:scale-105">
                 Ready to Upgrade? Start Your Free AI Strategy Session Today!
             </a>
         </div>
@@ -149,7 +147,7 @@
                     <li><strong class="font-semibold">Automate the Annoying Stuff:</strong> AI handles repetitive tasks so your team can do actual human work.</li>
                     <li><strong class="font-semibold">Data That Actually Makes Sense:</strong> Turn chaos into crystal-clear insights for smarter decisions.</li>
                     <li><strong class="font-semibold">Customers Who Love You More:</strong> Intelligent tools for smoother, delightful interactions.</li>
-                    <li><strong class="font-semibold">Sales & Marketing That Don't Sleep:</strong> Streamline growth, even when you're not pushing buttons.</li>
+                    <li><strong class="font-semibold">Sales & Marketing That Don't Sleep:</b> Streamline growth, even when you're not pushing buttons.</li>
                     <li><strong class="font-semibold">Future-Proof (No Crystal Ball Required):</strong> Adapt and innovate faster than the market changes. Your unfair advantage.</li>
                 </ul>
             </div>
@@ -161,7 +159,7 @@
         <div class="container mx-auto px-4 max-w-3xl">
             <h2 class="text-2xl md:text-3xl font-bold text-indigo-800 mb-6">Experience AI That Works.</h2>
             <!-- Changed href to call JS function -->
-            <a href="#" onclick="scrollToForm(event)" class="bg-indigo-700 text-white font-bold py-3 px-8 rounded-full text-lg hover:bg-indigo-800 transition duration-300 shadow-xl transform hover:scale-105">
+            <a href="#" onclick="scrollToForm(event)" class="bg-indigo-700 text-white font-bold py-3 px-6 text-base sm:px-8 sm:text-lg rounded-full hover:bg-indigo-800 transition duration-300 shadow-xl transform hover:scale-105">
                 Start Your Free Strategy Session Today!
             </a>
         </div>
@@ -244,7 +242,7 @@
                         <textarea id="challenge" name="challenge" rows="4" class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="e.g., 'Our sales process is too manual' or 'We need better customer insights'" required></textarea>
                     </div>
                     <div class="flex items-center justify-center">
-                        <button type="submit" id="submit-button" class="bg-indigo-600 text-white font-bold py-3 px-10 rounded-full text-xl hover:bg-indigo-700 transition duration-300 shadow-xl transform hover:scale-105">
+                        <button type="submit" id="submit-button" class="bg-indigo-600 text-white font-bold py-3 px-6 text-base sm:px-10 sm:text-xl rounded-full hover:bg-indigo-700 transition duration-300 shadow-xl transform hover:scale-105">
                             Request Your Free AI Strategy Session
                         </button>
                     </div>
@@ -279,11 +277,17 @@
             event.preventDefault(); // Prevent default anchor link behavior
 
             const formSection = document.getElementById('contact-form');
-            if (formSection) {
-                // Use scrollIntoView with 'start' block to align the top of the element with the top of the scroll area
-                formSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start' // Align the top of the element with the top of the scroll area
+            const header = document.getElementById('main-header'); // Get the header element
+
+            if (formSection && header) {
+                const headerHeight = header.offsetHeight; // Get the dynamic height of the header
+                const formSectionTop = formSection.getBoundingClientRect().top + window.pageYOffset;
+                // Calculate scroll position to place the top of the form just below the header
+                const scrollPosition = formSectionTop + 670;
+
+                window.scrollTo({
+                    top: scrollPosition,
+                    behavior: 'smooth'
                 });
             }
         }
@@ -339,7 +343,7 @@
             // IMPORTANT: Replace this with your actual API endpoint URL
             // This endpoint will receive the form data and then send it to Airtable.
             // You'll need to set up this endpoint (e.g., a serverless function, Zapier webhook).
-            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook/2abecff3-1266-4bdd-a10d-490abbddf16'; // <<< REPLACE THIS
+            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook/2abecff3-1266-4bdd-a10d-490ab5bddf16'; // <<< REPLACE THIS
 
             try {
                 console.log("Attempting to send form data to:", AIRTABLE_API_ENDPOINT_URL); // Debugging: log the URL
