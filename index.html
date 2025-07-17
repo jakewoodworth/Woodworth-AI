@@ -12,7 +12,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         html {
-            scroll-behavior: smooth; /* Keep smooth scroll for general anchors */
+            scroll-behavior: smooth;
+            /* Added scroll-padding-top to account for the fixed header height */
+            scroll-padding-top: 6rem; /* Adjust this value if needed to fine-tune the scroll position */
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -277,17 +279,11 @@
             event.preventDefault(); // Prevent default anchor link behavior
 
             const formSection = document.getElementById('contact-form');
-            const header = document.getElementById('main-header'); // Get the header element
-
-            if (formSection && header) {
-                const headerHeight = header.offsetHeight; // Get the dynamic height of the header
-                const formSectionTop = formSection.getBoundingClientRect().top + window.pageYOffset;
-                // Calculate scroll position to place the top of the form just below the header
-                const scrollPosition = formSectionTop + 670; 
-
-                window.scrollTo({
-                    top: scrollPosition,
-                    behavior: 'smooth'
+            if (formSection) {
+                // Use scrollIntoView with 'start' block to align the top of the element with the top of the scroll area
+                formSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start' // Align the top of the element with the top of the scroll area
                 });
             }
         }
@@ -343,7 +339,7 @@
             // IMPORTANT: Replace this with your actual API endpoint URL
             // This endpoint will receive the form data and then send it to Airtable.
             // You'll need to set up this endpoint (e.g., a serverless function, Zapier webhook).
-            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook/2abecff3-1266-4bdd-a10d-490ab5bddf16'; // <<< REPLACE THIS
+            const AIRTABLE_API_ENDPOINT_URL = 'https://jakewoodworth.app.n8n.cloud/webhook/2abecff3-1266-4bdd-a10d-490abbddf16'; // <<< REPLACE THIS
 
             try {
                 console.log("Attempting to send form data to:", AIRTABLE_API_ENDPOINT_URL); // Debugging: log the URL
